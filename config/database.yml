@@ -1,11 +1,18 @@
- default: &default
-   adapter: postgresql
-   pool: 5
-   timeout: 5000
-   username: link
-   password: tloz
-   host: 127.0.0.1
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  url: postgres://runnenom:QTe0HFJuK8gk8ZJLd7i3wfjtAc4-x-T3@tantor.db.elephantsql.com:5432/runnenom
+  host: tantor.db.elephantsql.com
+  username: runnenom
+  password: QTe0HFJuK8gk8ZJLd7i3wfjtAc4-x-T3
+  database: runnenom
 
- development:
-   <<: *default
-   database: BDCourse
+development:
+  <<: *default
+
+test:
+  <<<: *default
+
+production:
+  <<: *default
